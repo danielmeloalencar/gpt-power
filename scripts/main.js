@@ -142,7 +142,7 @@ async function main() {
 
       }, (result) => {  if (result)  value = result; });
 
-      //  var valor = prompt("Digite o valor para '" + variavel + "':");
+
       if( resultado === false){
         return false;
       }
@@ -161,17 +161,12 @@ async function main() {
     return string;
   }
 
-  // String com variáveis
 
-  // Chamar a função para preencher as variáveis e exibir o resultado
-
-
-  /****************************MINHA CUSTOMIZAÇÃO **************************************** */
 
   async function handleListItemClick(event, text = "") {
     const form = document.querySelector('form');
     const input = form?.querySelector('textarea');
-    let inputarea; // Declare the inputarea variable
+    let inputarea; 
     var newText = await preencherVariaveis(text);
 
     if (newText === false)
@@ -374,7 +369,7 @@ async function main() {
   }
 
   function tabLoadUserPrompts() {
-    listContainer.innerHTML = ''; // Clear existing list items
+    listContainer.innerHTML = ''; 
     parsedItems.forEach((itemText) => {
       const listItem = createListItem(itemText);
       listItem.addEventListener('click', (event) => handleListItemClick(event, itemText.prompt));
@@ -383,15 +378,14 @@ async function main() {
   }
 
   function tabFetchPrompts() {
-    listContainer.innerHTML = ''; // Clear existing list items
+    listContainer.innerHTML = '';
 
-    fetch('https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv')
-      .then((resp) => resp.text()) // retrieve CSV content as text
+    fetch('https://raw.githubusercontent.com/danielmeloalencar/gpt-power/master/prompts.csv')
+      .then((resp) => resp.text()) 
       .then((csvContent) => {
         const lines = csvContent.split('\n');
         const prompts = [];
 
-        // Parse CSV content into prompts array
         for (let i = 1; i < lines.length; i++) {
           const line = lines[i].trim();
           if (line !== '') {
@@ -400,9 +394,8 @@ async function main() {
           }
         }
 
-        // Perform actions on each prompt
         for (const prompt of prompts) {
-          const item = {title: prompt.act,prompt: "Act: " + prompt.act + "\n Prompt: " + prompt.prompt + " \n\n"};
+          const item = {title: prompt.act ,prompt: "Act: " + prompt.act + "\n Prompt: " + prompt.prompt + " \n\n"};
           const listItem = createListItem(item,false);
           listItem.addEventListener('click', (event) => handleListItemClick(event, item.prompt));
           listContainer.appendChild(listItem);
