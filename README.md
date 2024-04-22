@@ -1,6 +1,7 @@
 
 # Extensão do Chrome para Prompt do ChatGPT - GPT POWER
 
+![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/logoGrande.jpeg?raw=true)
 Esta é uma extensão do Chrome projetada para uso com o modelo de linguagem OpenAI GPT, especificamente a interface ChatGPT. Permite aos usuários gerar rapidamente respostas para prompts na interface ChatGPT usando respostas pré-escritas.
 
 ## Recursos
