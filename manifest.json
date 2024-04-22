@@ -3,7 +3,6 @@
   "version": "1.0",
   "manifest_version": 3,
   "description": "Adiciona uma barra lateral com prompts personalizados e suporte a variaveis.",
-  "permissions": ["activeTab"],
   "author" : "Daniel Melo Alencar",
 
   "content_scripts": [
