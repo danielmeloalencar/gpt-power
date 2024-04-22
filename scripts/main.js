@@ -100,13 +100,17 @@ async function main() {
   addButton.id = 'add-button';
   addButton.addEventListener('click', handleAddButtonClick);
 
-
+  const footer = document.createElement('div');
+  footer.textContent = 'Desenvolvido por Daniel Melo Alencar';
+  footer.style.fontSize = '11px';
+  footer.style.textAlign = 'center';
+  footer.style.marginTop = '10px';
   /////////////////
 
   /***** EDITAR  *****/
 
 
-  sidebarContainer.append(headerContainer, closeButton, tabContainer, listContainer, inputContainer);
+  sidebarContainer.append(headerContainer, closeButton, tabContainer, listContainer, inputContainer, footer);
 
   tabContainer.append(tab1Button, tab2Button);
   inputContainer.append(newItemTitle, newItemInput, addButton);
