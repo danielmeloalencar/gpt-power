@@ -13,7 +13,7 @@ Esta é uma extensão do Chrome projetada para uso com o modelo de linguagem Ope
 ## Screenshots
 
 ![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot1.png?raw=true)
-![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot21.png?raw=true)
+![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot2.png?raw=true)
 ![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot3.png?raw=true)
 
 ## Capturas de tela
