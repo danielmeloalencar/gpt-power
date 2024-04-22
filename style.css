@@ -1,0 +1,240 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(66, 67, 80);
+}
+
+
+/* Sidebar Container */
+.sidebar-container {
+  font-family: "Söhne", sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.sidebar-container.open {
+  transform: translateX(0);
+}
+
+
+
+/* Close Button */
+.close-button {
+  font-family: "Söhne", sans-serif;
+  padding: 10px;
+  font-size: 16px;
+  background-color:rgb(112, 194, 128);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.close-button.open {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.close-button::before {
+  content: "open";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(10px, -50%);
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+
+.close-button:hover,
+.close-button:focus {
+  opacity: 0.8;
+}
+
+/* Tab Container */
+.tab-container {
+  background-color: rgb(66, 67, 80);
+  font-family: "Söhne", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  transition: opacity 0.2s ease-in-out;
+  outline: none;
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Tab Button */
+.tab-button {
+  background-color: rgb(66, 67, 80);
+  font-family: "Söhne", sans-serif;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.tab-button:last-child {
+  margin-right: 0;
+}
+
+/* List Container */
+.list-container {
+  font-family: "Söhne", sans-serif;
+  height: calc(100% - 100px);
+  overflow: scroll;
+  list-style: none;
+  padding: 10px;
+  background-color: rgb(66, 67, 80);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Input Container */
+.input-container {
+  background-color: rgb(66, 67, 80);
+  font-family: "Söhne", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* New Item Input */
+.new-item-input {
+  overflow: scroll!important;
+  font-family: "Söhne", sans-serif;
+  flex: 7;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+/* Add Button */
+.add-button {
+  font-family: "Söhne", sans-serif;
+  flex: 3;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* List Item */
+.list-item {
+  background-color: rgb(66, 67, 80);
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Söhne", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: left;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 350px;
+  transition: transform 0.2s ease-in-out;
+}
+
+ul {
+  background-color: rgb(66, 67, 80);
+  overflow: hidden;
+  scrollbar-width: 10px;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  overflow-y:scroll;
+  margin-bottom:10px;
+}
+
+/* For Webkit-based browsers (Chrome, Safari) */
+ul::-webkit-scrollbar {
+ /* width: 0;
+  height: 0;*/
+}
+
+.list-item:hover,
+.list-item:focus {
+  opacity: 0.75;
+}
+
+.list-item:hover {
+  /*transform: scale(1.1);*/
+
+}
+
+/* Input Field */
+input[type="text"] {
+  display: inline-block;
+  width: calc(100% - 90px);
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: rgb(66, 67, 80);
+}
+
+/* Add Button */
+button.add-button {
+  display: inline-block;
+  width: 80px;
+  margin-left: 10px;
+  background-color: rgb(66, 67, 80);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Söhne", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  transition: opacity 0.2s ease-in-out;
+  outline: none;
+}
+
+button.add-button:hover,
+button.add-button:focus {
+  opacity: 0.75;
+}
+
+button.add-button:hover {
+  transform: scale(1.1);
+}
+
+.dialog {
+  background-color: #f1f1f1;
+}
+.input{
+	
+	width: 90%;
+	height:40px;
+  color:"black"!important;
+}

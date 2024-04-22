@@ -1,0 +1,88 @@
+.input{
+	
+	width: 100%;
+	height:40px;
+  color:"black";
+}
+.dialog {
+  background-color: rgb(66, 67, 80);
+  border-radius: 10px;
+  border: solid 1px;
+  padding: 10px;
+  border-color:rgb(66, 67, 80);
+  color: white; /* white text color */
+  -webkit-box-shadow: 10px 5px 10px 0px rgba(184,184,184, .5);
+  -moz-box-shadow: 10px 5px 10px 0px rgba(184,184,184,.5);
+  box-shadow: 10px 5px 10px 0px rgba(184,184,184,.5);
+}
+/* style for header tag inside dialog tag 
+  */
+.dialog header {
+  font-size: 11px;
+  color: white; /* White text color */
+  background-color: #333; /* Dark grey background */
+  padding: 10px; /* Some padding */
+  margin: -10px; /* Remove default margin */
+  margin-bottom: 10px;
+  border-radius: 10px 10px 0 0; /* Rounded corners */
+}
+
+
+
+.dialogFooter {
+  color: white; /* White text color */
+  padding: 5px; /* Some padding */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between elements */
+  gap: 10px; /* Add some space between elements */
+
+}
+.confirmButton{
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Some padding */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer/hand icon */
+  flex:1 ;/* Set a width if needed */
+  margin-top: 10px; /* Add some top margin */
+  margin-bottom: 10px; /* Add some bottom margin */
+  border-radius: 10px; /* Rounded corners */
+  /** disable selection
+  */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+}
+.cancelButton{
+  background-color: #f44336; /* Red background */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Some padding */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer/hand icon */
+  flex:1; /* Set a width if needed */
+  margin-top: 10px; /* Add some top margin */
+  margin-bottom: 10px; /* Add some bottom margin */
+  border-radius: 10px; /* Rounded corners */
+    /** disable selection
+  */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+/* style for all inputs */
+.input {
+  color: black; /* Black text color */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width */
+  margin-bottom: 10px; /* Add some bottom margin */
+  min-height: 80px; /* Set a minimum height */
+}
