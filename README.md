@@ -12,9 +12,9 @@ Esta é uma extensão do Chrome projetada para uso com o modelo de linguagem Ope
 
 ## Screenshots
 
-![](https://raw.githubusercontent.com/danielmalencar/gpt-power/main/screenshots/screenshot1.png)
-![](https://raw.githubusercontent.com/danielmalencar/gpt-power/main/screenshots/screenshot2.png)
-![](https://raw.githubusercontent.com/danielmalencar/gpt-power/main/screenshots/screenshot3.png)
+![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot1.png?raw=true)
+![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot21.png?raw=true)
+![](https://github.com/danielmeloalencar/gpt-power/blob/master/screenshots/screenshot3.png?raw=true)
 
 ## Capturas de tela
 
