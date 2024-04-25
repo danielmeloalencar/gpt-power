@@ -35,7 +35,7 @@ body {
   font-family: "Söhne", sans-serif;
   padding: 10px;
   font-size: 16px;
-  background-color:rgb(92, 92, 229);
+  background-color:#5c5ce5;
   border: none;
   cursor: pointer;
   position: absolute;
@@ -78,7 +78,7 @@ body {
   outline: none;
   display: flex;
   padding-right: 5px;
-  border-bottom: 1px solid rgb(92, 92, 229);
+  border-bottom: 1px solid #5c5ce5;
   padding-bottom:0px;
 }
 
@@ -103,7 +103,7 @@ text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #5c5ce5 0px
 
 }
 .tab-button:hover, .active-tab {
-  background-color: rgb(92, 92, 229);
+  background-color: #5c5ce5;
   color: #fff;
   transition: background-color 0.4s ease-in-out;
 }
@@ -139,6 +139,10 @@ text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #5c5ce5 0px
 .collapsed {
   height:0;
   overflow:hidden;
+}
+.collapse-button {
+  background-color: #5c5ce5;
+  border-radius:5px;
 }
 
 /* New Item Input */
@@ -198,7 +202,7 @@ text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #5c5ce5 0px
   overflow-x: hidden;
   overflow-y:scroll;
   margin-bottom:10px;
-  border: solid 1px rgb(92, 92, 229);
+  border: solid 1px #5c5ce5;
 }
 
 /* For Webkit-based browsers (Chrome, Safari) */
