@@ -11,7 +11,6 @@ function camelCaseToReadable(camelCase) {
 
 async function main() {
   var mode = "add";
-  var selectedTab = "user";
   var editItemName = "";
   // Load existing list items from localStorage
   const storedItems = localStorage.getItem('listItems');
@@ -66,6 +65,7 @@ async function main() {
 
   const collapseButton = document.createElement('button');
   collapseButton.textContent = 'Minimizar';
+
   collapseButton.classList.add('collapse-button');
   collapseButton.addEventListener('click', ()=>{
     inputContainer.classList.toggle('collapsed');
@@ -95,6 +95,7 @@ async function main() {
   newItemInput.rows = '6';
   newItemInput.style.overflow = 'scroll';
   newItemInput.style.borderRadius = '5px';
+  
 
   const addButton = document.createElement('button');
   addButton.textContent = 'Adicionar';
@@ -132,22 +133,27 @@ async function main() {
 
   /****************************MINHA CUSTOMIZAÇÃO *****************************************/
   // Função para preencher as variáveis na string
-  async function preencherVariaveis(string) {
+  async function preencherVariaveis(item) {
     // Expressão regular para encontrar as variáveis entre {{ e }}
     var regex = /{{(.*?)}}/g;
     var match;
     var variaveis = {};
     var value=""
+    var string = item.prompt;
+    var examples= item.example;
+    var x = 0;
     // Encontrar todas as variáveis na string e solicitar o preenchimento
     while ((match = regex.exec(string)) !== null ) {
       // Extrair o nome da variável
       var variavel = match[1].trim();
+      var example = examples.split("|")[x];
 
 
 
       const resultado = await showDialog({
         header: "GPT Power - Preencher Variáveis",
-        message: 'Digite o valor para "' + camelCaseToReadable(variavel) + '":',
+        example: example,
+        message: camelCaseToReadable(variavel),
         fieldType: "textarea"
 
       }, (result) => {  if (result)  value = result; });
@@ -173,11 +179,11 @@ async function main() {
 
 
 
-  async function handleListItemClick(event, text = "") {
+  async function handleListItemClick(event, item = {}) {
     const form = document.querySelector('form');
     const input = form?.querySelector('textarea');
     let inputarea; 
-    var newText = await preencherVariaveis(text);
+    var newText = await preencherVariaveis(item);
 
     if (newText === false)
       return;
@@ -193,7 +199,7 @@ async function main() {
       }
     } else {
       inputarea = input; // Assign the value of input to inputarea
-      if (text !== "") {
+      if (item.prompt !== "") {
         inputarea.value = newText;
       } else {
         inputarea.value = event.target.textContent;
@@ -406,15 +412,15 @@ async function main() {
         for (let i = 1; i < lines.length; i++) {
           const line = lines[i].trim();
           if (line !== '') {
-            const [act, prompt] = line.split('","').map((field) => field.replace(/"/g, ''));
-            prompts.push({ act, prompt });
+            const [act, prompt, example] = line.split('","').map((field) => field.replace(/"/g, ''));
+            prompts.push({ act, prompt, example });
           }
         }
 
         for (const prompt of prompts) {
-          const item = {title: prompt.act ,prompt: "Act: " + prompt.act + "\n Prompt: " + prompt.prompt + " \n\n"};
+          const item = {title: prompt.act ,prompt: "Act: " + prompt.act + "\n Prompt: " + prompt.prompt + " \n\n", example: prompt.example};
           const listItem = createListItem(item,false);
-          listItem.addEventListener('click', (event) => handleListItemClick(event, item.prompt));
+          listItem.addEventListener('click', (event) => handleListItemClick(event, item));
           listContainer.appendChild(listItem);
         }
       })

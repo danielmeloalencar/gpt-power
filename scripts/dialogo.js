@@ -27,6 +27,7 @@ function getInputType(fieldType = "textarea") {
 function showDialog(options = {
   header: "",
   message: "",
+  example: "",
   type: "prompt",
   fieldType: 'textarea'
 }, callbackFunction) {
@@ -43,7 +44,10 @@ function showDialog(options = {
 
     dialog.innerHTML = `
       <header>${options.header}</header>
-      <label>${options.message}</label>
+      <label>Preencha a variável:</label><br /> 
+      <label style="color:#28ffd9;">${options.message}</label> <br /> <br />  
+      <label style="color:#FFF;">Exemplo: <br /> ${options.example}</label> <br /> 
+     
       <br /> <br />
       ${getInputType(options.fieldType)}
       <br /> <br />
