@@ -11,6 +11,7 @@ function camelCaseToReadable(camelCase) {
 
 async function main() {
   var mode = "add";
+  var selectedTab = "user";
   var editItemName = "";
   // Load existing list items from localStorage
   const storedItems = localStorage.getItem('listItems');
@@ -46,6 +47,7 @@ async function main() {
   const tab1Button = document.createElement('button');
   tab1Button.textContent = 'Minha Galeria';
   tab1Button.classList.add('tab-button');
+  tab1Button.classList.add('active-tab');
   tab1Button.addEventListener('click', tabLoadUserPrompts);
 
   const tab2Button = document.createElement('button');
@@ -59,13 +61,17 @@ async function main() {
   listContainer.style.marginBottom = '10px';
 
   const inputContainer = document.createElement('div');
-  inputContainer.style.display = 'flex';
-  inputContainer.style.flexDirection = 'column';
-
-  inputContainer.style.justifyContent = 'center';
-  inputContainer.style.alignItems = 'center';
-  inputContainer.style.gap = '10px';
   inputContainer.id = 'input-container';
+  inputContainer.classList.add('input-container');
+
+  const collapseButton = document.createElement('button');
+  collapseButton.textContent = 'Minimizar';
+  collapseButton.classList.add('collapse-button');
+  collapseButton.addEventListener('click', ()=>{
+    inputContainer.classList.toggle('collapsed');
+    collapseButton.textContent = inputContainer.classList.contains('collapsed') ? 'Maximizar' : 'Minimizar';
+  
+  });
 
   /*** NOVO */
 
@@ -110,7 +116,7 @@ async function main() {
   /***** EDITAR  *****/
 
 
-  sidebarContainer.append(headerContainer, closeButton, tabContainer, listContainer, inputContainer, footer);
+  sidebarContainer.append(headerContainer, closeButton, tabContainer, listContainer,collapseButton, inputContainer, footer);
 
   tabContainer.append(tab1Button, tab2Button);
   inputContainer.append(newItemTitle, newItemInput, addButton);
@@ -373,6 +379,7 @@ async function main() {
   }
 
   function tabLoadUserPrompts() {
+    toggletabsStyle()
     listContainer.innerHTML = ''; 
     parsedItems.forEach((itemText) => {
       const listItem = createListItem(itemText);
@@ -381,7 +388,13 @@ async function main() {
     });
   }
 
+  function toggletabsStyle(){
+    tab1Button.classList.toggle('active-tab');
+    tab2Button.classList.toggle('active-tab');
+  }
+
   function tabFetchPrompts() {
+    toggletabsStyle()
     listContainer.innerHTML = '';
 
     fetch('https://raw.githubusercontent.com/danielmeloalencar/gpt-power/master/prompts.csv')

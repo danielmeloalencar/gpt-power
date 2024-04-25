@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: rgb(66, 67, 80);
+
 }
 
 
@@ -16,7 +16,8 @@ body {
   right: 0;
   width: 250px;
   height: 100%;
-  background-color: #f1f1f1;
+  background-color: rgb(66, 67, 80);
+  color:#FFF;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
@@ -34,7 +35,7 @@ body {
   font-family: "Söhne", sans-serif;
   padding: 10px;
   font-size: 16px;
-  background-color:rgb(112, 194, 128);
+  background-color:rgb(92, 92, 229);
   border: none;
   cursor: pointer;
   position: absolute;
@@ -76,19 +77,35 @@ body {
   transition: opacity 0.2s ease-in-out;
   outline: none;
   display: flex;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding-right: 5px;
+  border-bottom: 1px solid rgb(92, 92, 229);
+  padding-bottom:0px;
+}
+
+.header-container {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+background: #333333;
+margin-bottom:10px;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #5c5ce5 0px 0px 20px, #5c5ce5 0px 0px 30px, #5c5ce5 0px 0px 40px, #5c5ce5 0px 0px 50px, #5c5ce5 0px 0px 75px;
+
 }
 
 /* Tab Button */
 .tab-button {
   background-color: rgb(66, 67, 80);
   font-family: "Söhne", sans-serif;
-  padding: 10px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 14px;
   border: none;
   cursor: pointer;
-  margin-right: 10px;
+
+}
+.tab-button:hover, .active-tab {
+  background-color: rgb(92, 92, 229);
+  color: #fff;
+  transition: background-color 0.4s ease-in-out;
 }
 
 .tab-button:last-child {
@@ -110,11 +127,18 @@ body {
 
 /* Input Container */
 .input-container {
-  background-color: rgb(66, 67, 80);
-  font-family: "Söhne", sans-serif;
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height:300px;
+  transition: height 0.3s ease-in-out;
+}
+
+.collapsed {
+  height:0;
+  overflow:hidden;
 }
 
 /* New Item Input */
@@ -166,7 +190,7 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
-ul {
+.sidebar-container ul {
   background-color: rgb(66, 67, 80);
   overflow: hidden;
   scrollbar-width: 10px;
@@ -174,14 +198,44 @@ ul {
   overflow-x: hidden;
   overflow-y:scroll;
   margin-bottom:10px;
+  border: solid 1px rgb(92, 92, 229);
 }
 
 /* For Webkit-based browsers (Chrome, Safari) */
-ul::-webkit-scrollbar {
+.sidebar-container ul::-webkit-scrollbar {
  /* width: 0;
   height: 0;*/
 }
+/* Chrome, Edge and Safari */
+.sidebar-container ul::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.sidebar-container ul::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #DFE9EB;
+}
 
+.sidebar-container ul::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+.sidebar-container ul::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+.sidebar-container ul::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #5C5CE5;
+}
+
+.sidebar-container ul::-webkit-scrollbar-thumb:hover {
+  background-color: #5C5CE5;
+}
+
+..sidebar-container ul::-webkit-scrollbar-thumb:active {
+  background-color: #5C5CE5;
+}
 .list-item:hover,
 .list-item:focus {
   opacity: 0.75;
@@ -193,7 +247,7 @@ ul::-webkit-scrollbar {
 }
 
 /* Input Field */
-input[type="text"] {
+.sidebar-container input[type="text"] {
   display: inline-block;
   width: calc(100% - 90px);
   box-sizing: border-box;
@@ -204,7 +258,7 @@ input[type="text"] {
 }
 
 /* Add Button */
-button.add-button {
+.sidebar-container button.add-button {
   display: inline-block;
   width: 80px;
   margin-left: 10px;
@@ -220,13 +274,13 @@ button.add-button {
   outline: none;
 }
 
-button.add-button:hover,
-button.add-button:focus {
+.sidebar-container button.add-button:hover,
+.sidebar-container button.add-button:focus {
   opacity: 0.75;
 }
 
-button.add-button:hover {
-  transform: scale(1.1);
+.sidebar-container button.add-button:hover {
+  opacity: 0.75;
 }
 
 .dialog {
